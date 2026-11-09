@@ -1,0 +1,19 @@
+# systemd USER unit. Install to ~/.config/systemd/user/aula-bot.service, then:
+#   systemctl --user daemon-reload && systemctl --user enable --now aula-bot
+#   sudo loginctl enable-linger $USER     # keep it running when you're logged out
+# %h expands to your home directory.
+[Unit]
+Description=Aula Discord bot (answers questions in #aula via claude -p + aula-mcp)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/aula-agent/code/bot
+EnvironmentFile=%h/.config/aula-agent/env
+ExecStart=%h/.bun/bin/bun %h/aula-agent/code/bot/bot.ts
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target

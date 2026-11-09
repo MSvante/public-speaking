@@ -1,0 +1,18 @@
+resources:
+  jobs:
+    homescraper_build:
+      name: homescraper_build
+      description: >
+        Build silver.listings and gold.listings_scored from the raw files uploaded to
+        /Volumes/${var.catalog}/bronze/raw. No schedule: triggered by
+        `homescraper scrape --target databricks` after each local scrape.
+      tasks:
+        - task_key: build
+          spark_python_task:
+            python_file: ../src/homescraper/jobs/build_databricks.py
+            parameters: ["${workspace.file_path}"]
+          environment_key: default
+      environments:
+        - environment_key: default
+          spec:
+            client: "3"

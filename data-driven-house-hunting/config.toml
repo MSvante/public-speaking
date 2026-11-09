@@ -1,0 +1,44 @@
+# Scrape scope: Region Midtjylland (regionCode 1082), villa + rækkehus, for sale.
+
+[source]
+base_url = "https://api.boligsiden.dk/search/cases"
+# Boligsiden addressTypes (comma-separated in the API). "terraced house" = rækkehus.
+address_types = ["villa", "terraced house"]
+per_page = 500
+concurrency = 4
+max_retries = 5
+timeout_seconds = 60
+user_agent = "homescraper/0.1 (personal project)"
+
+# Boligsiden municipality slug -> kommune code
+[kommuner]
+horsens = 615
+herning = 657
+holstebro = 661
+lemvig = 665
+struer = 671
+syddjurs = 706
+norddjurs = 707
+favrskov = 710
+odder = 727
+randers = 730
+silkeborg = 740
+samsoe = 741
+skanderborg = 746
+aarhus = 751
+ikast-brande = 756
+ringkoebing-skjern = 760
+hedensted = 766
+skive = 779
+viborg = 791
+
+[local]
+raw_dir = "data/raw"
+stations_csv = "data/stations_midtjylland.csv"
+duckdb_path = "data/homescraper.duckdb"
+
+[databricks]
+profile = "free_account"
+catalog = "homescraper"
+volume_path = "/Volumes/homescraper/bronze/raw"
+build_job_name = "homescraper_build"

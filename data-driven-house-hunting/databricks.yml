@@ -1,0 +1,32 @@
+bundle:
+  name: homescraper
+  # direct engine: avoids the bundled Terraform download (its signing key expired)
+  engine: direct
+
+include:
+  - resources/*.yml
+
+variables:
+  catalog:
+    description: "Unity Catalog holding bronze (raw volume), silver (listings) and gold (scored)."
+    default: homescraper
+  warehouse_id:
+    description: "SQL warehouse the app queries."
+    lookup:
+      warehouse: "Serverless Starter Warehouse"
+
+sync:
+  exclude:
+    - "data/**"
+    - "**/__pycache__"
+    - ".venv/**"
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      profile: free_account
+      root_path: ~/.bundle/${bundle.name}/${bundle.target}
+    run_as:
+      user_name: ${workspace.current_user.userName}

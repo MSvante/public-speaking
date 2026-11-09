@@ -1,0 +1,8 @@
+command: ["streamlit", "run", "streamlit_app.py"]
+env:
+  - name: HOMESCRAPER_BACKEND
+    value: databricks
+  - name: HOMESCRAPER_TABLE
+    value: homescraper.gold.listings_scored
+  - name: DATABRICKS_WAREHOUSE_ID
+    valueFrom: warehouse

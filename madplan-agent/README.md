@@ -20,6 +20,7 @@ Companion repo for the session **"Dear AI, What's for Dinner?"** /
 | `code/systemd/madplan-bot.service` | systemd user unit for the bot |
 | `.env.example` | All secrets (copy to `~/.config/madplan-agent/env`, `chmod 600`) |
 | `talk/abstract.md` | Session abstract, English and Danish |
+| `slides/dear-ai-whats-for-dinner.pptx` | The slide deck (PowerPoint, 21 slides); `.pdf` alongside for viewing without PowerPoint |
 
 handle-mcp is not included. Install it from its own repo (see `BLUEPRINT.md` §4.1). The recipe
 site's own code and database migrations are not included either; `BLUEPRINT.md` §3 lists the

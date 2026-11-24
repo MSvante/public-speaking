@@ -9,10 +9,11 @@ Friday, prices the week at three Danish online grocery stores, and fills the che
 two human "ok"s. A human always picks the delivery time and pays. The meal planner is only the
 running example; the session is about how it's built:
 
-- **MCP in five minutes:** hosts, clients and servers, tools/resources/prompts, stdio vs.
-  Streamable HTTP, and what `tools/list` and `tools/call` look like on the wire
-- **Writing an MCP server:** a tool in 15 lines with the TypeScript SDK and zod, why tool design is
-  prompt design, and giving the server its own identity so Row Level Security applies
+- **What an MCP server is**, in plain words: how an AI gets access to a system like a database or
+  a webshop, and what the AI actually sees (a list of tools, each with a name, a description and
+  its inputs)
+- **Building one:** a tool in four fields, what makes a good tool, and why the server should log in
+  as its own user so Row Level Security applies
 - **Claude Code as a headless agent runtime:** `claude -p` flag by flag (`--strict-mcp-config`,
   allowed/disallowed tools, session resume), and keeping state outside the model
 - **Guardrails, "prompts ask, code decides":** five layers of control, validating state instead of
@@ -31,11 +32,11 @@ aftensmad, prissætter ugen hos tre danske netbutikker og fylder den billigste k
 menneskelige "ok". Et menneske vælger altid leveringstid og betaler. Madplanen er bare det
 gennemgående eksempel; sessionen handler om, hvordan det er bygget:
 
-- **MCP på fem minutter:** hosts, clients og servere, tools/resources/prompts, stdio vs.
-  Streamable HTTP, og hvordan `tools/list` og `tools/call` ser ud på wire-niveau
-- **At skrive en MCP-server:** et tool på 15 linjer med TypeScript-SDK'et og zod, hvorfor tool
-  design er prompt design, og hvorfor serveren skal have sin egen identitet, så Row Level Security
-  gælder
+- **Hvad en MCP-server er**, forklaret enkelt: hvordan en AI får adgang til et system som en
+  database eller en webshop, og hvad AI'en faktisk ser (en liste af tools med navn, beskrivelse og
+  input)
+- **At bygge en:** et tool i fire felter, hvad der gør et tool godt, og hvorfor serveren skal logge
+  ind som sin egen bruger, så Row Level Security gælder
 - **Claude Code som headless agent-runtime:** `claude -p` flag for flag (`--strict-mcp-config`,
   tilladte/forbudte tools, genoptagelse af sessioner), og tilstand der ligger uden for modellen
 - **Guardrails, "prompten beder, koden bestemmer":** fem lag af kontrol, validering af tilstand i

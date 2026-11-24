@@ -1,0 +1,26 @@
+{
+  "channel_name": "madplan",
+  "channel_id": null,
+  "users": {
+    "123456789012345678": "Alex",
+    "234567890123456789": "Sam"
+  },
+  "recipe_import_users": ["123456789012345678"],
+  "weekly": {
+    "enabled": true,
+    "kickoff": { "weekday": "friday", "time": "10:00" },
+    "reminder_time": "16:00",
+    "persons": 4,
+    "household": "2 voksne og 2 børn",
+    "max_minutes": 45,
+    "no_repeat_weeks": 4,
+    "min_fish": 1,
+    "min_vegetarian": 1,
+    "dislikes": [],
+    "pantry": ["salt", "peber", "olie", "smør", "sukker", "mel", "eddike", "bouillon", "tørrede krydderier"],
+    "stores": ["nemlig", "bilkatogo", "rema1000"],
+    "rema_pickup_ok": true,
+    "pickup_note": "Aarhus N",
+    "single_store": true
+  }
+}

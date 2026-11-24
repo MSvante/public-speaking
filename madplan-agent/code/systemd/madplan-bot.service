@@ -1,0 +1,16 @@
+[Unit]
+Description=Madplan Discord bot (#madplan via claude -p + madplan/handle MCP)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Adjust paths. %h = your home directory.
+EnvironmentFile=%h/.config/madplan-agent/env
+WorkingDirectory=%h/madplan-agent/code/bot
+ExecStart=%h/.bun/bin/bun %h/madplan-agent/code/bot/bot.ts
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=default.target

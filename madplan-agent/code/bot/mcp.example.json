@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "madplan": { "type": "stdio", "command": "/home/you/.bun/bin/bun", "args": ["/home/you/madplan-agent/code/madplan-mcp/server.ts"] },
+    "handle": { "type": "stdio", "command": "/home/you/.local/bin/uvx", "args": ["handle-mcp@latest"],
+                "env": { "HANDLE_REMA1000_STORE_ID": "123,456" } }
+  }
+}

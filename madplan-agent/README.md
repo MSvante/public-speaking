@@ -6,8 +6,7 @@ shopping list and fills the cheapest cart after two human "ok"s. The human alway
 delivery time and pays. Built on the open-source handle-mcp server, a small custom MCP server for
 the family's own recipe site, and Claude Code in headless mode.
 
-Companion repo for the session **"Dear AI, What's for Dinner?"** /
-**"Kære AI, hvad skal vi have at spise?"**.
+Companion repo for the session **"MCP in Practice: A Meal-Plan Agent, Under the Hood"**.
 
 | Path | What |
 |---|---|
@@ -20,7 +19,7 @@ Companion repo for the session **"Dear AI, What's for Dinner?"** /
 | `code/systemd/madplan-bot.service` | systemd user unit for the bot |
 | `.env.example` | All secrets (copy to `~/.config/madplan-agent/env`, `chmod 600`) |
 | `talk/abstract.md` | Session abstract, English and Danish |
-| `slides/dear-ai-whats-for-dinner.pptx` | The slide deck (PowerPoint, 21 slides); `.pdf` alongside for viewing without PowerPoint |
+| `slides/mcp-in-practice.pptx` | The slide deck (PowerPoint, 20 slides); `.pdf` alongside for viewing without PowerPoint |
 
 handle-mcp is not included. Install it from its own repo (see `BLUEPRINT.md` §4.1). The recipe
 site's own code and database migrations are not included either; `BLUEPRINT.md` §3 lists the
